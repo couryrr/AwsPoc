@@ -1,7 +1,6 @@
 language: java
-install: true
 sudo: false
 jdk:
 	- openjdk8
 script: 
-	- mvn test
+	- mvn clean test
