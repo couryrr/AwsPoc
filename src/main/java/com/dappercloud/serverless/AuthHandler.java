@@ -20,9 +20,12 @@ public class AuthHandler {
 			try {
 				// Super insecure please do not use this.
 				Algorithm algorithm = Algorithm.HMAC256("secret");
-				token = JWT.create().withIssuer("dapper-cloud").withExpiresAt(cal.getTime()).sign(algorithm);
+				token = JWT.create()
+						.withIssuer("dapper-cloud")
+						.withExpiresAt(cal.getTime())
+						.sign(algorithm);
 			} catch (JWTCreationException exception) {
-				// Invalid Signing configuration / Couldn't convert Claims.
+				token = exception.getMessage();
 			}
 
 			return token;
@@ -37,7 +40,9 @@ public class AuthHandler {
 			DecodedJWT jwt = null;
 			try {
 				Algorithm algorithm = Algorithm.HMAC256("secret");
-				JWTVerifier verifier = JWT.require(algorithm).withIssuer("dapper-cloud").build();
+				JWTVerifier verifier = JWT.require(algorithm)
+						.withIssuer("dapper-cloud")
+						.build();
 
 				jwt = verifier.verify(data.get("token").toString());
 			} catch (JWTVerificationException exception) {
