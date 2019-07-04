@@ -11,7 +11,7 @@ deploy:
   provider: lambda
   function_name: "LambdaPOC"
   region: "us-east-1"
-  role: "arn:aws:lambda:us-east-2:052686530403:function:LambdaPOC"
+  role: "arn:aws:lambda:us-east-2:052686530403"
   runtime: "java-1.8.0-openjdk"
   handler_name: "handleRequest"
   access_key_id: $AWS_KEY
