@@ -7,4 +7,11 @@ script:
 cache:
   directories:
   - $HOME/.m2
+deploy:
+  provider: lambda
+  function_name: "grant-jwt"
+  region: "us-east-2"
+  role: "arn:aws:iam::052686530403:role/Lambda-Api-Manager"
+  runtime: "java-1.8.0-openjdk"
+  handler_name: "com.dapper.cloud.function.GrantJwt::handleRequest"
 
