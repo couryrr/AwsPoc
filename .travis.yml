@@ -3,7 +3,7 @@ sudo: false
 jdk: 
   - openjdk8
 script: 
-  - mvn clean test 
+  - mvn clean package 
 cache:
   directories:
   - $HOME/.m2
@@ -16,4 +16,7 @@ deploy:
   role: "arn:aws:iam::052686530403:role/Lambda-Api-Manager"
   runtime: "java8"
   handler_name: "com.dapper.cloud.function.GrantJwt::handleRequest"
+addons:
+  artifacts:
+    debug: true
 
