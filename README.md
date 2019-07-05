@@ -2,24 +2,45 @@
 
 This is still a small POC project. It is simple.
 
-```json
-{
-  "method" : "MethodName",
-  "token" : "for verify method",
-  "duration" : "int of minutes for grant"
-}
-```
 ## Current method names
 
-- health: verify that the lambda still exist and is currently running
 - grant: grant a token right now only setting a duration
+
+> Request 
+```json
+  {
+    "duration" : "int of minutes for grant"
+  }
+```
+
+> Response
+```json
+  {
+    "token" : "string token"
+  }
+```
+
 - verify: will send back the system time and expiration time
+
+> Request 
+```json
+  {
+    "token" : "string token"
+  }
+```
+
+> Response
+```json
+  {
+    "valid" : "boolean"
+  }
+```
 
 ## Short commings
 
 - INSECURE...
 - Limited error handling
-- Pretty much useless at the moment for the grant
+- Pretty much useless at the moment for grant
 
 ## Planning
 
