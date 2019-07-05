@@ -8,16 +8,23 @@ cache:
   directories:
   - $HOME/.m2
 deploy:
-  access_key_id: $AWS_KEY
-  secret_access_key: $AWS_SECRET
-  provider: lambda
-  function_name: "grant-jwt"
-  region: "us-east-2"
-  role: "arn:aws:iam::052686530403:role/Lambda-Api-Manager"
-  runtime: "java8"
-  module_name: "com.dapper.cloud.function.GrantJwt"
-  handler_name: "handleRequest"
-addons:
-  artifacts:
-    debug: true
+  - provider: lambda
+    access_key_id: $AWS_KEY
+    secret_access_key: $AWS_SECRET
+    function_name: "grant-jwt"
+    region: "us-east-2"
+    role: "arn:aws:iam::052686530403:role/Lambda-Api-Manager"
+    runtime: "java8"
+    module_name: "com.dapper.cloud.function.GrantJwt-test"
+    handler_name: "handleRequest"
+  - provider: lambda
+    access_key_id: $AWS_KEY
+    secret_access_key: $AWS_SECRET
+    function_name: "verify-jwt"
+    region: "us-east-2"
+    role: "arn:aws:iam::052686530403:role/Lambda-Api-Manager"
+    runtime: "java8"
+    module_name: "com.dapper.cloud.function.VerifyJwt-test"
+    handler_name: "handleRequest"
+
 
