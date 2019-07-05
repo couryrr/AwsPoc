@@ -8,6 +8,8 @@ cache:
   directories:
   - $HOME/.m2
 deploy:
+  access_key_id: $AWS_KEY
+  secret_access_key: $AWS_SECRET
   provider: lambda
   function_name: "grant-jwt"
   region: "us-east-2"
