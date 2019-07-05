@@ -45,5 +45,5 @@ This is still a small POC project. It is simple.
 ## Planning
 
 - I have no idea just working at it as I go
-- At the moment can be hit here: https://f5v6s3y92m.execute-api.us-east-2.amazonaws.com/POC/LambdaPOC
+- At the moment can be hit here: https://f1v8hefxu8.execute-api.us-east-2.amazonaws.com/test/token/verify
 
