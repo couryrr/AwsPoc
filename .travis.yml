@@ -14,6 +14,6 @@ deploy:
   function_name: "grant-jwt"
   region: "us-east-2"
   role: "arn:aws:iam::052686530403:role/Lambda-Api-Manager"
-  runtime: "java-1.8.0-openjdk"
+  runtime: "java8"
   handler_name: "com.dapper.cloud.function.GrantJwt::handleRequest"
 
