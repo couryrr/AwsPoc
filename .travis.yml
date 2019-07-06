@@ -7,25 +7,30 @@ cache:
   directories:
   - $HOME/.m2
 deploy:
-  - provider: lambda
-    access_key_id: $AWS_KEY
-    secret_access_key: $AWS_SECRET
-    function_name: "grant-jwt"
-    region: "us-east-2"
-    role: "arn:aws:iam::052686530403:role/Lambda-Api-Manager"
-    runtime: "java8"
-    module_name: "com.dapper.cloud.function.GrantJwt"
-    handler_name: "handleRequest"
-    file: "./grant-jwt/target/grant-jwt-0.0.1-SNAPSHOT.jar"
-  - provider: lambda
-    access_key_id: $AWS_KEY
-    secret_access_key: $AWS_SECRET
-    function_name: "verify-jwt"
-    region: "us-east-2"
-    role: "arn:aws:iam::052686530403:role/Lambda-Api-Manager"
-    runtime: "java8"
-    module_name: "com.dapper.cloud.function.VerifyJwt"
-    handler_name: "handleRequest"
-    file: "./verify-jwt/target/verify-jwt-0.0.1-SNAPSHOT.jar"
+  provider: s3
+  access_key_id: $AWS_KEY
+  secret_access_key: $AWS_SECRET
+  bucket: "com.dapper.cloud.s3.grant"
+
+#  - provider: lambda
+#    access_key_id: $AWS_KEY
+#    secret_access_key: $AWS_SECRET
+#    function_name: "grant-jwt"
+#    region: "us-east-2"
+#    role: "arn:aws:iam::052686530403:role/Lambda-Api-Manager"
+#    runtime: "java8"
+#    module_name: "com.dapper.cloud.function.GrantJwt"
+#    handler_name: "handleRequest"
+#    file: "./grant-jwt/target/grant-jwt-0.0.1-SNAPSHOT.jar"
+#  - provider: lambda
+#    access_key_id: $AWS_KEY
+#    secret_access_key: $AWS_SECRET
+#    function_name: "verify-jwt"
+#    region: "us-east-2"
+#    role: "arn:aws:iam::052686530403:role/Lambda-Api-Manager"
+#    runtime: "java8"
+#    module_name: "com.dapper.cloud.function.VerifyJwt"
+#    handler_name: "handleRequest"
+#    file: "./verify-jwt/target/verify-jwt-0.0.1-SNAPSHOT.jar"
 
 
