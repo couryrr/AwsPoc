@@ -13,7 +13,7 @@ public class GrantJwt implements RequestHandler<APIGatewayProxyRequestEvent, API
 
 	@Override
 	public APIGatewayProxyResponseEvent handleRequest(APIGatewayProxyRequestEvent input, Context context) {
-
+		System.out.println("JUST A TEST");
 		Map<String, Object> body = JsonHandler.toMap(input.getBody());
 
 		Map<String, Object> response = new HashMap<String, Object>();
