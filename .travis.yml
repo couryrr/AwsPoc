@@ -3,6 +3,7 @@ jdk:
   - openjdk8
 script: 
   - mvn package 
+  - ls $TRAVIS_BUILD_DIR
 cache:
   directories:
   - $HOME/.m2
