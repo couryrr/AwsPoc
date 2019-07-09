@@ -3,7 +3,9 @@ jdk:
   - openjdk8
 script: 
   - mvn package 
-  - ls $TRAVIS_BUILD_DIR
+  - ls $TRAVIS_BUILD_DIR/grant-jwt/target
+  - ls $TRAVIS_BUILD_DIR/verify-jwt/target
+  
 cache:
   directories:
   - $HOME/.m2
