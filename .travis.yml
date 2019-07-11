@@ -19,6 +19,7 @@ deploy:
     module_name: "com.dapper.cloud.function.GrantJwt"
     handler_name: "handleRequest"          
     zip: "${TRAVIS_BUILD_DIR}/grant-jwt/target/grant-jwt-0.0.1-SNAPSHOT.jar"
+    memory_size: 512
   - provider: lambda
     skip_cleanup: true
     access_key_id: $AWS_KEY
@@ -30,5 +31,6 @@ deploy:
     module_name: "com.dapper.cloud.function.VerifyJwt"
     handler_name: "handleRequest"
     zip: "${TRAVIS_BUILD_DIR}/verify-jwt/target/verify-jwt-0.0.1-SNAPSHOT.jar"
+    memory_size: 512
 
 
