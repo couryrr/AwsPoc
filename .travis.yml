@@ -9,6 +9,9 @@ cache:
   - $HOME/.m2
 deploy:
   - provider: lambda
+    edge:
+      source: https://github.com/couryrr/dpl
+      branch: lambda-java-handler
     skip_cleanup: true   
     access_key_id: $AWS_KEY
     secret_access_key: $AWS_SECRET
@@ -20,6 +23,7 @@ deploy:
     handler_name: "handleRequest"          
     zip: "${TRAVIS_BUILD_DIR}/grant-jwt/target/grant-jwt-0.0.1-SNAPSHOT.jar"
     memory_size: 512
+    timeout: 15
   - provider: lambda
     skip_cleanup: true
     access_key_id: $AWS_KEY
@@ -32,5 +36,6 @@ deploy:
     handler_name: "handleRequest"
     zip: "${TRAVIS_BUILD_DIR}/verify-jwt/target/verify-jwt-0.0.1-SNAPSHOT.jar"
     memory_size: 512
+    timeout: 15
 
 
