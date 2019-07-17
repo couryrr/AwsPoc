@@ -10,7 +10,7 @@ cache:
 deploy:
   - provider: lambda
     edge:
-      source: https://github.com/couryrr/dpl
+      source: couryrr/dpl
       branch: lambda-java-handler
     skip_cleanup: true   
     access_key_id: $AWS_KEY
